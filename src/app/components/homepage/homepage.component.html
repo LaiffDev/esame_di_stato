@@ -1,1 +1,43 @@
-<p>homepage works!</p>
+
+<div class="container mx-auto text-center">
+  <h1>LISTA APPUNTAMENTI</h1>
+  <table>
+    <thead class="p-4">
+      <tr class="bg-[#3e3e3e] text-white headings">
+        <th>No°</th>
+        <th>DESCIZIONE</th>
+        <th>DATA E ORA DI RICEVIMENTO</th>
+        <th>DOCENTE DESIDERATO</th>
+        <th>ACCETTA O RIFIUTA</th>
+        <th>RISPOSTA DOCENTE</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(schedule of schedules; track schedule){
+        <tr class="bg-gray-100 p-5">
+          <td class="p-5 bg-gray-300">{{schedule.id}}</td>
+          <td>{{schedule.description}}</td>
+          <td>{{schedule.date_time_of_receiving}}</td>
+          <td>{{schedule.teacher_interested}}</td>
+          <td class="flex gap-5 justify-center items-center">
+            <a class="bg-green-500 p-1 text-white cursor-pointer m-5" (click)="accettaAppuntamento(schedule)">Accetta</a>
+            <a class="bg-red-400 p-1 text-white cursor-pointer" (click)="rifiutaAppuntamento(schedule)">Rifiuta</a>
+          </td>
+            @if(schedule.accepted){
+              <td>
+                <p>Accettato</p>
+              </td>
+            }
+            @else{
+              <td>
+                <p>Non accettato</p>
+              </td>
+            }
+        </tr>
+      }
+    </tbody>
+
+  </table>
+</div>
+
+
