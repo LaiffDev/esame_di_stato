@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "latiff",
-    "password": "qwerty93",
+    "password": "qwerty",
     "database": "app_db",
-    "host": "its-esame-db.c9nj1x2p6gk5.eu-west-1.rds.amazonaws.com",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }
